@@ -1,176 +1,152 @@
-# Aura Dental Atelier
+# 🦷 Aura Dental Atelier
 
-A modern, high-converting dental clinic website designed to showcase painless microscopic and aesthetic dentistry services. Built with cutting-edge web technologies and designed for maximum conversion.
+> **Painless Microscopic & Aesthetic Dentistry**  
+> *Vadodara, Gujarat, India*
 
-## 🌟 Overview
+[![React](https://img.shields.io/badge/React-18.3.1-61DAFB?logo=react&logoColor=black)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.6.3-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Vite](https://img.shields.io/badge/Vite-8.3.8-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4-38B2AC?logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![License](https://img.shields.io/badge/License-Proprietary-red)](#license)
 
-**Aura Dental Atelier** is a premium dental clinic website featuring:
-
-- **Biophilic clinical sanctuary** messaging and 100% needle-free numbing protocol
-- **25x Carl Zeiss microscopic care** with advanced visual technology
-- **Swiss biomimetic smile design** using E.max porcelain and minimal-prep techniques
-- **Computerized pain-free anesthesia** with The Wand® system
-- **Luxury clinical aesthetic** with glassmorphic design and premium typography
-
-## 🚀 Live Demo
-
-The site is built with Vite and ready for immediate deployment.
-
-## 🛠️ Tech Stack
-
-| Category | Technologies |
-|----------|-------------|
-| **Framework** | React 18.3 + TypeScript + Vite |
-| **Styling** | Tailwind CSS 4.3, PostCSS, Autoprefixer |
-| **UI Components** | Lucide React icons, custom glassmorphic components |
-| **Data** | TypeScript types with clinical data store |
-| **Build** | `vite`, `tsc`, `vite build` |
-
-## 📦 Installation
-
-```bash
-# Install dependencies
-npm install
-
-# Start development server
-npm run dev
-
-# Build for production
-npm run build
-
-# Preview production build
-npm run preview
-```
-
-## 🏗️ Project Structure
-
-```
-src/
-├── components/
-│   ├── layout/          # TopTrustBar, Navbar, Footer, StickyMobileBar
-│   ├── sections/        # HeroSection, SymptomFinder, Disciplines, SmileStudio,
-│   │                   # TechnologyTour, Specialists, PricingFaq, BookingWidget
-│   └── modals/          # DisciplineModal
-├── data/                # dentalData.ts - All clinical data, doctors, prices, FAQs
-├── types/               # TypeScript type definitions
-├── index.html           # HTML template with meta tags and optimization
-└── main.tsx             # Application entry point
-```
-
-### Key Data Files
-
-- **`dentalData.ts`** - Complete clinical data including:
-  - `IMAGES` - Unsplash hero and component images
-  - `SYMPTOM_JOURNEYS` - Patient journey data by symptom type
-  - `DISCIPLINES` - 4 specialized departments (Veneers, Aligners, Endodontics, Implants)
-  - `SMILE_CASES` - Before/after case studies
-  - `TECH_HARDWARE` - Clinical technology showcase (The Wand, Zeiss, iTero, Autoclave)
-  - `DOCTORS` - Three specialist doctors with credentials
-  - `PRICING_ITEMS` - Service pricing with 0% EMI options
-  - `FAQS` - Patient questions and answers
-
-## 🎨 Design Highlights
-
-- **Glassmorphic navigation** with scrolled background transition
-- **Bento grid layout** for disciplined sections (2x2 architectural layout)
-- **Dual CTA strategy** - Primary book consultation button + secondary "Find Your Treatment" link
-- **Trust metrics bar** with patient statistics and ratings
-- **Mobile-first responsive design** adapting from 320px to 4K displays
-- **Accessibility-focused** with proper semantic HTML, focus-visible states, and aria labels
-
-## 📱 Pages/Sections
-
-1. **Hero Section** - Value proposition with trust metrics and image card
-2. **Symptom Finder** - Interactive patient journey by pain/smile/missing/anxiety
-3. **Disciplines** - 4 clinical specialties in bento grid format
-4. **Smile Studio** - Before/after smile transformation showcase
-5. **Technology Tour** - Clinical equipment and sterilization showcase
-6. **Specialists** - Doctor profiles with backgrounds and specialties
-7. **Pricing & FAQ** - Transparent pricing with 0% EMI options and accordion FAQ
-8. **Booking Widget** - Smart WhatsApp integration for appointment booking
-
-## 🔧 Customization
-
-### Adding New Services
-
-Edit `src/data/dentalData.ts` to add:
-- New disciplines with highlights and protocol steps
-- Additional pricing categories with EMI options
-- New FAQ entries
-
-### Updating Hero Content
-
-Modify `src/components/sections/HeroSection.tsx` to change:
-- Tagline and headline text
-- Trust metrics (statistics)
-- Image and visual elements
-
-### Doctor/Staff Updates
-
-Update `src/data/dentalData.ts` `DOCTORS` array with:
-- Names, credentials, roles
-- Experience and case counts
-- Specialties and bio text
-- Image references
-
-### Changing Pricing
-
-Modify `src/data/dentalData.ts` `PRICING_ITEMS` to:
-- Add/remove service categories
-- Update prices and EMI options
-- Modify included services tags
-
-## 🌈 Brand Assets
-
-### Color Palette (Tailwind Config)
-
-The site uses a carefully curated palette:
-
-- **Ink (`ink`)** - Primary text color
-- **Paper (`paper`)** - Background color
-- **Ink Hover (`ink-hover`)** - Hover states
-- **Paper 2 (`paper-2`)** - Secondary backgrounds
-- **Paper 3 (`paper-3`)** - Card backgrounds
-- **Accent Gold (`accent-gold`)** - Primary accent color
-- **Muted (`muted`)** - Secondary text
-- **Success BG (`success-bg`)** - Success state backgrounds
-- **Card (`card`)** - Card component backgrounds
-- **Border Rule (`border-rule`)** - Border styling
-
-See `tailwind.config.js` and `src/base.css` for full CSS variable definitions.
-
-## 📦 Deployment
-
-### Vercel
-
-```bash
-npm run build
-vercel
-```
-
-### Netlify
-
-```bash
-npm run build
-netlify deploy
-```
-
-### Traditional Hosting
-
-Upload the `dist/` folder contents to your web server. The site is static HTML/JS/CSS with no backend requirements.
-
-## 📄 License
-
-Private project - All rights reserved.
-
-## 🙏 Acknowledgments
-
-- **Unsplash** for hero and section imagery
-- **Lucide React** for the icon set
-- **Tailwind CSS** for the utility-first styling system
-- **Vite** for the lightning-fast development experience
+A modern, high-converting, anxiety-free digital dental clinic web application. Built for **Aura Dental Atelier**, Gujarat's premier luxury dental sanctuary specializing in painless microscopic treatments, computerized anesthesia, Swiss biomimetic smile design, and 3D digital implants.
 
 ---
 
-**Aura Dental Atelier** - Painless Microscopic & Aesthetic Dentistry in Gujarat  
-Website: https://aura-dental-atelier.example.com
+## 🌟 Key Highlights & Features
+
+- **Biophilic Clinical Sanctuary:** Calming aesthetics with glassmorphic cards, emerald & warm cream tones, designed to alleviate dental anxiety.
+- **The Wand® Computerized Anesthesia:** Needle-free, pressure-regulated painless numbing protocol.
+- **25x Carl Zeiss Microscopic Dentistry:** High-precision conservative treatments preserving healthy natural tooth structure.
+- **Swiss Biomimetic Smile Design:** Natural aesthetics with ultra-thin E.max porcelain veneers and minimal tooth preparation.
+- **Interactive Symptom Journey Finder:** Smart multi-path patient guidance matching user symptoms (acute pain, aesthetic desires, missing teeth, dental anxiety) to specialized clinical journeys.
+- **Bento Grid Clinical Disciplines:** 4 core departments (Biomimetic Veneers, Clear Aligners, Micro-Endodontics, Immediate Implants) with interactive protocol modals.
+- **Before & After Smile Studio:** Real clinical case studies with patient age, timeline, and procedure breakdown.
+- **Hospital-Grade Sterilization Showcase:** Class-B vacuum autoclave protocols with sterilization tracking.
+- **Smart WhatsApp Booking Integration:** Direct 1-tap pre-filled appointment scheduling with clinic specialists.
+- **Transparent Pricing & 0% EMI:** Detailed service cost breakdown with zero hidden charges and EMI options.
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer | Technology | Description |
+|---|---|---|
+| **Frontend Framework** | **React 18.3.1** | Functional components, modern hooks |
+| **Language** | **TypeScript 5.6.3** | Strict type safety for data models and UI props |
+| **Bundler & Build Tool** | **Vite 8.3.8** + **@vitejs/plugin-react 6.3.0** | Ultra-fast HMR and optimized production bundling with Rolldown |
+| **Styling** | **Tailwind CSS v4** + PostCSS | Utility-first styling with custom design tokens |
+| **Icons** | **Lucide React** (`0.468.0`) | Modern, lightweight dental and UI icons |
+| **Typography** | **Google Fonts** | `Instrument Serif` (editorial luxury), `Plus Jakarta Sans` (clinical readability), `JetBrains Mono` (precision specs) |
+| **SEO & Schema** | **Schema.org JSON-LD** | Dentist practice structured data, GeoCoordinates, local business schema |
+
+---
+
+## 📁 Project Structure
+
+```
+clinic-web/
+├── public/                 # Static assets & public files
+├── src/
+│   ├── components/
+│   │   ├── layout/         # TopTrustBar, Navbar, Footer, StickyMobileBar
+│   │   ├── sections/       # HeroSection, SymptomFinder, Disciplines, SmileStudio,
+│   │   │                   # TechnologyTour, Specialists, PricingFaq, BookingWidget
+│   │   └── modals/         # DisciplineModal (deep-dive treatment protocols)
+│   ├── data/
+│   │   └── dentalData.ts   # Central clinical data store (doctors, services, FAQs, etc.)
+│   ├── types/
+│   │   └── index.ts        # TypeScript interfaces & types
+│   ├── App.tsx             # Main application layout
+│   ├── base.css            # Custom CSS variables, fonts & styling
+│   ├── index.css           # Tailwind CSS imports
+│   ├── tokens.css          # Design tokens & color system
+│   └── main.tsx            # React application entry point
+├── .gitignore              # Git ignore rules for node_modules, build outputs, and IDEs
+├── .npmrc                  # NPM configuration for CI/CD compatibility
+├── index.html              # HTML shell with meta tags & JSON-LD structured data
+├── package.json            # Project dependencies and npm scripts
+├── tailwind.config.js      # Tailwind design system configuration
+├── tsconfig.json           # Root TypeScript configuration
+├── tsconfig.app.json       # Application TypeScript configuration
+└── vite.config.ts          # Vite build and development configuration
+```
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- **Node.js**: v18.0.0 or higher (v20+ recommended)
+- **npm**: v9.0.0 or higher
+
+### Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/nouman030/clinic-web.git
+   cd clinic-web
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Start local development server:**
+   ```bash
+   npm run dev
+   ```
+   Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+4. **Build for production:**
+   ```bash
+   npm run build
+   ```
+
+5. **Preview production build locally:**
+   ```bash
+   npm run preview
+   ```
+
+---
+
+## 🌐 Deployment (Vercel)
+
+This project is optimized for zero-config deployment on [Vercel](https://vercel.com):
+
+1. **Push your code to GitHub:**
+   ```bash
+   git add .
+   git commit -m "Configure dependencies for production deployment"
+   git push origin main
+   ```
+
+2. **Import into Vercel:**
+   - Link your GitHub repository in the Vercel Dashboard.
+   - **Framework Preset:** Vite
+   - **Build Command:** `npm run build` (or `tsc -b && vite build`)
+   - **Output Directory:** `dist`
+   - **Install Command:** `npm install`
+
+> **Note on Dependencies:**  
+> The project uses Vite 8 with `@vitejs/plugin-react` `^6.3.0`, and includes `.npmrc` configured with `legacy-peer-deps=true` to ensure clean, error-free dependency resolution across all CI/CD environments.
+
+---
+
+## 🎨 Design System & Colors
+
+| Token Name | Hex Code | Usage |
+|---|---|---|
+| **Deep Sanctuary Forest** | `#0F3D3E` / `#0B2D2E` | Brand primary, hero header, dark contrast |
+| **Warm Editorial Paper** | `#FAF8F5` / `#F3EFEA` | Clean background canvas, clinical softness |
+| **Accent Gold / Sand** | `#D4A373` / `#B8860B` | Trust badges, highlights, CTA accents |
+| **Medical Muted Ink** | `#4A5568` / `#2D3748` | Clinical body copy, typography hierarchy |
+| **Painless Mint** | `#E8F5E9` / `#2E7D32` | Anesthesia & trust protocol badges |
+
+---
+
+## 📄 License
+
+Proprietary — All rights reserved © **Aura Dental Atelier**.

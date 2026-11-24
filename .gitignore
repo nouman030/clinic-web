@@ -8,6 +8,9 @@ dist/
 dist-ssr/
 *.local
 
+# Deployment platforms
+.vercel/
+
 # Environment variables
 .env
 .env.local
@@ -15,12 +18,38 @@ dist-ssr/
 .env.test.local
 .env.production.local
 
-# Tooling and caches
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Tooling, AI agents, and local caches
 .live/
+.agent/
+.agents/
+.claude/
 /freebuff-sites-build/
 *.tsbuildinfo
-.DS_Store
-Thumbs.db
 
-.agents
-.agent
+# IDE and Editor directories
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
