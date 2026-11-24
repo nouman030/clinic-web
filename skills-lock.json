@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "skills": {
+    "ui-ux-audit": {
+      "source": "nicepkg/ai-workflow",
+      "sourceType": "github",
+      "skillPath": "workflows/marketing-pro-workflow/.claude/skills/ui-ux-audit/SKILL.md",
+      "computedHash": "107ac3e49f9bb5ac01871cd360617c7f6597698a7b4996ead913ad0aa1f8b749"
+    }
+  }
+}

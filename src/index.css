@@ -1,0 +1,16 @@
+/* Hallmark · genre: editorial · theme: Atelier · posture: restrained · contrast: pass · v2.0.0 */
+@import "tailwindcss";
+@import "./tokens.css";
+@import "./base.css" layer(base);
+
+@layer utilities {
+  .font-serif-editorial {
+    font-family: var(--font-serif);
+  }
+  .font-sans {
+    font-family: var(--font-sans);
+  }
+  .font-mono-tech {
+    font-family: var(--font-mono);
+  }
+}
