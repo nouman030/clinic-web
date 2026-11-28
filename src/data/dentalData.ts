@@ -12,8 +12,7 @@ import {
 // VERIFIED HIGH-RESOLUTION CLINICAL & PORTRAIT IMAGERY (ZERO DUPLICATES)
 // ============================================================================
 export const IMAGES = {
-  heroSuite:
-    'https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1400&q=85',
+  heroSmile: '/images/hero-smile.jpg',
   symptomPain:
     'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1100&q=85',
   symptomSmile:

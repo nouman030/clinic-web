@@ -85,42 +85,34 @@ export default function HeroSection({ onBookClick }: HeroSectionProps) {
             </p>
           </div>
 
-          {/* Right 5 Columns: Contained Architectural Image Card */}
-          <div className="lg:col-span-5">
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-card bg-paper-2 aspect-[4/4.6]">
+          {/* Right 5 Columns: Seamless Borderless Smile Visual Blended into Canvas */}
+          <div className="lg:col-span-5 flex items-center justify-center">
+            <div className="relative w-full max-w-xl lg:max-w-none lg:-mx-3 aspect-[5/4] select-none">
+              {/* Soft White/Paper Diffused Blur Halo */}
               <img
-                src={IMAGES.heroSuite}
-                alt="Aura Dental Atelier Sunlit Suite"
-                fetchPriority="high"
-                className="w-full h-full object-cover"
+                src={IMAGES.heroSmile}
+                alt=""
+                aria-hidden="true"
+                width={612}
+                height={408}
+                className="hero-smile-halo-mask absolute inset-0 w-full h-full object-cover object-[54%_50%] scale-105 blur-2xl opacity-50 brightness-110 pointer-events-none"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-transparent to-transparent" />
 
-              {/* Top-Right Sterilization Pill */}
-              <div className="absolute top-4 right-4 bg-card/95 backdrop-blur-md px-3.5 py-2 rounded-full shadow-md flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-accent motion-safe:animate-pulse" />
-                <span className="text-[11px] font-bold text-ink tracking-wide">
-                  Class-B 7-step sterile
-                </span>
-              </div>
+              {/* Crisp Focal Smile Image with Feathered Edges */}
+              <img
+                src={IMAGES.heroSmile}
+                alt="Natural, luminous smile and healthy enamel crafted at Aura Dental Atelier"
+                fetchPriority="high"
+                width={612}
+                height={408}
+                className="hero-smile-feather relative w-full h-full object-cover object-[54%_50%] brightness-[1.03] contrast-[1.02]"
+              />
 
-              {/* Bottom Contained Glass Card */}
-              <div className="absolute bottom-4 left-4 right-4 bg-card/95 backdrop-blur-md p-4 rounded-2xl shadow-lg border border-rule flex items-center justify-between gap-4">
-                <div>
-                  <span className="text-[10px] font-mono text-accent-gold font-semibold block">
-                    German optical standard
-                  </span>
-                  <p className="text-sm font-bold text-ink mt-0.5">
-                    0.02mm Microscopic Precision
-                  </p>
-                  <p className="text-xs text-muted">
-                    Carl Zeiss Extaro 300 and iTero 5D Suite
-                  </p>
-                </div>
-                <div className="w-11 h-11 rounded-xl bg-ink text-paper flex items-center justify-center shrink-0 font-mono text-xs font-bold">
-                  25x
-                </div>
-              </div>
+              {/* Airy White-Paper Perimeter Mist Blend */}
+              <div
+                aria-hidden="true"
+                className="hero-smile-mist pointer-events-none absolute -inset-2"
+              />
             </div>
           </div>
         </div>
