@@ -32,8 +32,10 @@ export default function SymptomFinder({ onBookClick }: SymptomFinderProps) {
             const isActive = activeSymptom.id === item.id;
             return (
               <button
+                type="button"
                 key={item.id}
                 onClick={() => setActiveSymptom(item)}
+                aria-pressed={isActive}
                 className={`px-5 py-3.5 rounded-full text-sm font-semibold transition-colors cursor-pointer flex items-center gap-2.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus ${
                   isActive
                     ? 'bg-ink text-white shadow-md'

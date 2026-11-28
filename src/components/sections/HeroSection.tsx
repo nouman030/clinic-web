@@ -9,15 +9,15 @@ export default function HeroSection({ onBookClick }: HeroSectionProps) {
   return (
     <section className="relative pt-10 pb-20 lg:pt-16 lg:pb-28 overflow-hidden bg-paper">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
-          {/* Left 7 Columns: Editorial Typography & Value Prop */}
-          <div className="lg:col-span-7 space-y-7">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+          {/* Left 6 Columns: Editorial Typography & Value Prop */}
+          <div className="lg:col-span-6 space-y-7">
             <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-success-bg border border-ink/15 text-ink text-xs font-semibold">
               <ShieldCheck className="w-4 h-4 text-accent" />
               <span>Biophilic clinical sanctuary | 100% needle-free numbing protocol</span>
             </div>
 
-            <h1 className="font-serif text-4xl sm:text-6xl lg:text-[70px] font-normal tracking-tight text-ink leading-[1.04] text-balance">
+            <h1 className="font-serif text-4xl sm:text-5xl lg:text-[58px] xl:text-[66px] font-normal tracking-tight text-ink leading-[1.04] text-balance">
               Precision dentistry, crafted for quiet comfort.
             </h1>
 
@@ -85,33 +85,34 @@ export default function HeroSection({ onBookClick }: HeroSectionProps) {
             </p>
           </div>
 
-          {/* Right 5 Columns: Seamless Borderless Smile Visual Blended into Canvas */}
-          <div className="lg:col-span-5 flex items-center justify-center">
-            <div className="relative w-full max-w-xl lg:max-w-none lg:-mx-3 aspect-[5/4] select-none">
-              {/* Soft White/Paper Diffused Blur Halo */}
-              <img
-                src={IMAGES.heroSmile}
-                alt=""
-                aria-hidden="true"
-                width={612}
-                height={408}
-                className="hero-smile-halo-mask absolute inset-0 w-full h-full object-cover object-[54%_50%] scale-105 blur-2xl opacity-50 brightness-110 pointer-events-none"
-              />
+          {/* Right 6 Columns: Large Seamless Borderless Portrait Blended into Canvas */}
+          <div className="lg:col-span-6 flex items-center justify-center">
+            <div className="relative -mx-2 sm:mx-0 w-[calc(100%+1rem)] sm:w-full max-w-2xl lg:max-w-none lg:w-[110%] lg:-mr-[6%] aspect-[4/3] select-none">
+              {/* Soft White/Paper Diffused Blur Halo (masked on wrapper so blur never clips) */}
+              <div aria-hidden="true" className="hero-smile-halo-mask absolute inset-0 pointer-events-none">
+                <img
+                  src={IMAGES.heroSmile}
+                  alt=""
+                  width={1024}
+                  height={683}
+                  className="w-full h-full object-cover object-center blur-xl opacity-45 brightness-105"
+                />
+              </div>
 
-              {/* Crisp Focal Smile Image with Feathered Edges */}
+              {/* Crisp Full-Portrait Smile Image with Seamless Edge Blending */}
               <img
                 src={IMAGES.heroSmile}
-                alt="Natural, luminous smile and healthy enamel crafted at Aura Dental Atelier"
+                alt="Smiling young girl resting comfortably against a warm linen cushion at Aura Dental Atelier"
                 fetchPriority="high"
-                width={612}
-                height={408}
-                className="hero-smile-feather relative w-full h-full object-cover object-[54%_50%] brightness-[1.03] contrast-[1.02]"
+                width={1024}
+                height={683}
+                className="hero-smile-feather relative w-full h-full object-cover object-center brightness-[1.01] contrast-[1.01]"
               />
 
               {/* Airy White-Paper Perimeter Mist Blend */}
               <div
                 aria-hidden="true"
-                className="hero-smile-mist pointer-events-none absolute -inset-2"
+                className="hero-smile-mist pointer-events-none absolute inset-0"
               />
             </div>
           </div>
@@ -144,10 +145,10 @@ export default function HeroSection({ onBookClick }: HeroSectionProps) {
           ].map((item, idx) => (
             <div key={idx} className={idx > 0 ? 'lg:pl-8' : ''}>
               <div className="flex items-center gap-1.5">
-                <p className="text-2xl sm:text-3xl font-bold font-mono text-ink">
+                <p className="text-[21px] sm:text-3xl font-bold font-mono text-ink whitespace-nowrap">
                   {item.stat}
                 </p>
-                {item.isRating && <Star className="w-5 h-5 text-accent-gold fill-accent-gold" />}
+                {item.isRating && <Star className="w-4 h-4 sm:w-5 sm:h-5 text-accent-gold fill-accent-gold shrink-0" />}
               </div>
               <p className="text-sm font-bold text-ink mt-1">{item.label}</p>
               <p className="text-xs text-muted mt-0.5">{item.sub}</p>

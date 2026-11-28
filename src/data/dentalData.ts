@@ -1,3 +1,4 @@
+import heroSmileImg from '../assets/hero-smile.jpg';
 import {
   SymptomJourney,
   Discipline,
@@ -12,7 +13,7 @@ import {
 // VERIFIED HIGH-RESOLUTION CLINICAL & PORTRAIT IMAGERY (ZERO DUPLICATES)
 // ============================================================================
 export const IMAGES = {
-  heroSmile: '/images/hero-smile.jpg',
+  heroSmile: heroSmileImg,
   symptomPain:
     'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1100&q=85',
   symptomSmile:

@@ -30,29 +30,29 @@ export default function Navbar({
           : 'bg-paper py-5 border-b border-rule/60'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-6">
         {/* Brand Identity */}
-        <a href="#" className="flex items-center gap-3 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-2 rounded-lg">
-          <div className="w-10 h-10 rounded-xl bg-ink text-paper flex items-center justify-center shadow-sm group-hover:bg-ink-hover transition-colors">
+        <a href="#" className="flex items-center gap-3 shrink-0 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-2 rounded-lg">
+          <div className="w-10 h-10 rounded-xl bg-ink text-paper flex items-center justify-center shadow-sm group-hover:bg-ink-hover transition-colors shrink-0">
             <Sparkles className="w-5 h-5 text-accent-gold" />
           </div>
           <div>
-            <span className="block text-lg font-bold tracking-tight text-ink leading-none">
+            <span className="block text-lg font-bold tracking-tight text-ink leading-none whitespace-nowrap">
               Aura Dental Atelier
             </span>
-            <span className="block text-[11px] font-mono text-muted mt-1">
+            <span className="block text-[11px] font-mono text-muted mt-1 whitespace-nowrap">
               Microscopic and aesthetic studio
             </span>
           </div>
         </a>
 
         {/* Desktop Links */}
-        <nav className="hidden lg:flex items-center gap-8 text-sm font-medium text-muted">
+        <nav aria-label="Primary" className="hidden lg:flex items-center gap-5 xl:gap-7 text-[13px] xl:text-sm font-medium text-muted">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="hover:text-ink transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus rounded-sm"
+              className="hover:text-ink transition-colors whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus rounded-sm"
             >
               {link.label}
             </a>
@@ -60,8 +60,9 @@ export default function Navbar({
         </nav>
 
         {/* Clean Single-Line CTA */}
-        <div className="hidden sm:flex items-center gap-3">
+        <div className="hidden sm:flex items-center gap-3 shrink-0">
           <button
+            type="button"
             onClick={() =>
               onBookClick('Comprehensive 3D Smile & Dental Checkup', 'Dr. Nouman Patel')
             }
@@ -74,8 +75,11 @@ export default function Navbar({
 
         {/* Mobile Drawer Button */}
         <button
+          type="button"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Toggle Menu"
+          aria-expanded={mobileMenuOpen}
+          aria-controls="mobile-nav-menu"
           className="lg:hidden p-2.5 rounded-xl border border-rule text-ink hover:bg-paper-2 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus"
         >
           {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -84,7 +88,7 @@ export default function Navbar({
 
       {/* Mobile Dropdown Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-paper border-b border-rule px-6 py-5 space-y-3">
+        <div id="mobile-nav-menu" className="lg:hidden bg-paper border-b border-rule px-6 py-5 space-y-3">
           {navLinks.map((link) => (
             <a
               key={link.href}

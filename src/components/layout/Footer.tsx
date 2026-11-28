@@ -19,9 +19,9 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-xs font-mono text-accent-gold font-bold">
+            <h3 className="text-xs font-mono text-accent-gold font-bold">
               Clinical departments
-            </h4>
+            </h3>
             <ul className="mt-3 space-y-2 text-xs text-white/80">
               <li>Biomimetic porcelain veneers</li>
               <li>3D invisible clear aligners</li>
@@ -31,9 +31,9 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-xs font-mono text-accent-gold font-bold">
+            <h3 className="text-xs font-mono text-accent-gold font-bold">
               Clinic address
-            </h4>
+            </h3>
             <p className="mt-3 text-xs text-white/70 leading-relaxed">
               1st Floor, Emerald Lane, Love Road, Bharuch, Gujarat 390001
             </p>
@@ -43,9 +43,9 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-xs font-mono text-accent-gold font-bold">
+            <h3 className="text-xs font-mono text-accent-gold font-bold">
               Emergency pain desk
-            </h4>
+            </h3>
             <a
               href="tel:+911224888899"
               className="mt-3 text-lg font-mono font-bold text-white hover:text-accent-gold transition-colors block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold"

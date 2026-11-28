@@ -92,7 +92,7 @@ export default function BookingWidget({
           {/* Right 7 Columns: Compact 2-Column Interactive Booking Form */}
           <div className="lg:col-span-7 p-8 sm:p-10 lg:p-12">
             {bookingSubmitted ? (
-              <div className="h-full flex flex-col items-center justify-center text-center py-10">
+              <div role="status" aria-live="polite" className="h-full flex flex-col items-center justify-center text-center py-10">
                 <div className="w-16 h-16 rounded-full bg-success-bg text-ink flex items-center justify-center mb-4">
                   <CheckCircle2 className="w-9 h-9 text-accent" />
                 </div>
@@ -145,10 +145,11 @@ export default function BookingWidget({
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {/* Treatment Selector */}
                   <div>
-                    <label className="block text-xs font-bold text-ink font-mono mb-1.5">
+                    <label htmlFor="booking-treatment" className="block text-xs font-bold text-ink font-mono mb-1.5">
                       1. Clinical Service
                     </label>
                     <select
+                      id="booking-treatment"
                       value={bookingForm.treatment}
                       onChange={(e) =>
                         setBookingForm({ ...bookingForm, treatment: e.target.value })
@@ -178,10 +179,11 @@ export default function BookingWidget({
 
                   {/* Specialist Selector */}
                   <div>
-                    <label className="block text-xs font-bold text-ink font-mono mb-1.5">
+                    <label htmlFor="booking-doctor" className="block text-xs font-bold text-ink font-mono mb-1.5">
                       2. Preferred Specialist
                     </label>
                     <select
+                      id="booking-doctor"
                       value={bookingForm.doctor}
                       onChange={(e) =>
                         setBookingForm({ ...bookingForm, doctor: e.target.value })
@@ -207,10 +209,11 @@ export default function BookingWidget({
                 {/* Date & Time Slot Selector */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-bold text-ink font-mono mb-1.5">
+                    <label htmlFor="booking-date" className="block text-xs font-bold text-ink font-mono mb-1.5">
                       3. Preferred Date
                     </label>
                     <input
+                      id="booking-date"
                       type="date"
                       required
                       value={bookingForm.date}
@@ -222,10 +225,10 @@ export default function BookingWidget({
                   </div>
 
                   <div>
-                    <label className="block text-xs font-bold text-ink font-mono mb-1.5">
+                    <span className="block text-xs font-bold text-ink font-mono mb-1.5">
                       4. Preferred Time Window
-                    </label>
-                    <div className="grid grid-cols-3 gap-2">
+                    </span>
+                    <div className="grid grid-cols-3 gap-2" role="group" aria-label="Preferred time window">
                       {[
                         '11:00 AM (Morning)',
                         '03:30 PM (Afternoon)',
@@ -236,6 +239,7 @@ export default function BookingWidget({
                           <button
                             type="button"
                             key={slot}
+                            aria-pressed={active}
                             onClick={() => setBookingForm({ ...bookingForm, slot })}
                             className={`py-2.5 px-2 rounded-xl text-xs font-semibold border transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus ${
                               active
@@ -254,11 +258,13 @@ export default function BookingWidget({
                 {/* Patient Details */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-bold text-ink font-mono mb-1.5">
+                    <label htmlFor="booking-name" className="block text-xs font-bold text-ink font-mono mb-1.5">
                       5. Your Full Name *
                     </label>
                     <input
+                      id="booking-name"
                       type="text"
+                      autoComplete="name"
                       required
                       placeholder="e.g. Aarav Desai"
                       value={bookingForm.name}
@@ -270,11 +276,13 @@ export default function BookingWidget({
                   </div>
 
                   <div>
-                    <label className="block text-xs font-bold text-ink font-mono mb-1.5">
+                    <label htmlFor="booking-phone" className="block text-xs font-bold text-ink font-mono mb-1.5">
                       6. WhatsApp / Mobile Number *
                     </label>
                     <input
+                      id="booking-phone"
                       type="tel"
+                      autoComplete="tel"
                       required
                       placeholder="+91 1224 8888 99"
                       value={bookingForm.phone}

@@ -68,6 +68,13 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-paper text-ink font-sans selection:bg-ink selection:text-paper antialiased overflow-x-clip">
+      <a
+        href="#main-content"
+        className="visually-hidden fixed top-3 left-3 z-50 bg-ink text-paper px-4 py-2.5 rounded-full text-sm font-semibold shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus"
+      >
+        Skip to main content
+      </a>
+
       {/* 1. Top Clinical Trust Bar */}
       <TopTrustBar />
 
@@ -79,7 +86,7 @@ export default function App() {
         onBookClick={triggerSmartBooking}
       />
 
-      <main>
+      <main id="main-content">
         {/* 3. Hero Section (Contained architectural image card, zero badge overlap & trust metrics) */}
         <HeroSection onBookClick={triggerSmartBooking} />
 

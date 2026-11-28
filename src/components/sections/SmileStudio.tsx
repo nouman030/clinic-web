@@ -86,14 +86,34 @@ export default function SmileStudio({ onBookClick }: SmileStudioProps) {
               onMouseDown={() => setIsDragging(true)}
               onTouchStart={() => setIsDragging(true)}
               onClick={(e) => updateSliderPosition(e.clientX)}
+              onKeyDown={(e) => {
+                if (e.key === 'ArrowLeft') {
+                  e.preventDefault();
+                  setSliderPos((p) => Math.max(8, p - 4));
+                } else if (e.key === 'ArrowRight') {
+                  e.preventDefault();
+                  setSliderPos((p) => Math.min(92, p + 4));
+                } else if (e.key === 'Home') {
+                  e.preventDefault();
+                  setSliderPos(8);
+                } else if (e.key === 'End') {
+                  e.preventDefault();
+                  setSliderPos(92);
+                }
+              }}
               className="relative rounded-3xl overflow-hidden select-none cursor-ew-resize border-2 border-white/15 shadow-2xl aspect-[16/11] bg-stone-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold"
               tabIndex={0}
+              role="slider"
               aria-label="Before and after clinical comparison slider"
+              aria-valuemin={8}
+              aria-valuemax={92}
+              aria-valuenow={Math.round(sliderPos)}
             >
               {/* AFTER LAYER */}
               <img
                 src={currentCase.image}
                 alt="After smile restoration outcome"
+                loading="lazy"
                 draggable={false}
                 className="absolute inset-0 w-full h-full object-cover pointer-events-none"
                 style={{
@@ -102,23 +122,17 @@ export default function SmileStudio({ onBookClick }: SmileStudioProps) {
               />
 
               {/* BEFORE LAYER */}
-              <div
-                className="absolute inset-y-0 left-0 overflow-hidden pointer-events-none"
-                style={{ width: `${sliderPos}%` }}
-              >
-                <img
-                  src={currentCase.image}
-                  alt="Before smile restoration pre-treatment"
-                  draggable={false}
-                  className="h-full max-w-none object-cover"
-                  style={{
-                    width: sliderContainerRef.current
-                      ? `${sliderContainerRef.current.clientWidth}px`
-                      : '100vw',
-                    filter: 'sepia(0.38) brightness(0.84) contrast(0.92) saturate(0.85)'
-                  }}
-                />
-              </div>
+              <img
+                src={currentCase.image}
+                alt="Before smile restoration pre-treatment"
+                loading="lazy"
+                draggable={false}
+                className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+                style={{
+                  clipPath: `inset(0 ${100 - sliderPos}% 0 0)`,
+                  filter: 'sepia(0.38) brightness(0.84) contrast(0.92) saturate(0.85)'
+                }}
+              />
 
               {/* Labels */}
               <div className="absolute top-4 left-4 bg-black/70 backdrop-blur-md text-white/90 text-[11px] font-mono px-3 py-1 rounded-full">
@@ -139,8 +153,9 @@ export default function SmileStudio({ onBookClick }: SmileStudioProps) {
               </div>
 
               {/* Bottom Instruction Bar */}
-              <div className="absolute bottom-3 left-1/2 -translate-x-1/2 bg-black/65 backdrop-blur-md px-4 py-1.5 rounded-full text-[11px] font-mono text-white/90 pointer-events-none whitespace-nowrap">
-                Drag slider to compare shade and enamel architecture
+              <div className="absolute bottom-3 left-1/2 -translate-x-1/2 bg-black/65 backdrop-blur-md px-3 sm:px-4 py-1.5 rounded-full text-[10px] sm:text-[11px] font-mono text-white/90 pointer-events-none whitespace-nowrap">
+                <span className="sm:hidden">Drag slider to compare</span>
+                <span className="hidden sm:inline">Drag slider to compare shade and enamel architecture</span>
               </div>
             </div>
           </div>

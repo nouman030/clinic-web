@@ -4,7 +4,6 @@ import { PRICING_ITEMS, FAQS } from '../../data/dentalData';
 
 export default function PricingFaq() {
   const [showEmiMode, setShowEmiMode] = useState(false);
-  const [openFaqIndex, setOpenFaqIndex] = useState(0);
 
   return (
     <section id="pricing" className="py-20 lg:py-28 bg-paper-2">
@@ -25,6 +24,8 @@ export default function PricingFaq() {
               {/* Interactive 0% EMI Toggle */}
               <div className="bg-card p-1 rounded-full border border-rule inline-flex items-center">
                 <button
+                  type="button"
+                  aria-pressed={!showEmiMode}
                   onClick={() => setShowEmiMode(false)}
                   className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus ${
                     !showEmiMode ? 'bg-ink text-white' : 'text-muted hover:text-ink'
@@ -33,6 +34,8 @@ export default function PricingFaq() {
                   Standard Fee
                 </button>
                 <button
+                  type="button"
+                  aria-pressed={showEmiMode}
                   onClick={() => setShowEmiMode(true)}
                   className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus ${
                     showEmiMode ? 'bg-accent text-white' : 'text-muted hover:text-ink'
@@ -102,35 +105,24 @@ export default function PricingFaq() {
             </h2>
 
             <div className="mt-6 space-y-3">
-              {FAQS.map((faq, idx) => {
-                const isOpen = openFaqIndex === idx;
-                return (
-                  <div
-                    key={idx}
-                    className="bg-card rounded-2xl border border-rule overflow-hidden"
-                  >
-                    <button
-                      onClick={() => setOpenFaqIndex(isOpen ? -1 : idx)}
-                      aria-expanded={isOpen}
-                      className="w-full p-5 text-left flex items-center justify-between gap-4 cursor-pointer hover:bg-paper/50 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus"
-                    >
-                      <span className="text-sm sm:text-base font-serif font-bold text-ink">
-                        {faq.q}
-                      </span>
-                      <ChevronDown
-                        className={`w-5 h-5 text-accent shrink-0 transition-transform duration-200 ${
-                          isOpen ? 'rotate-180' : ''
-                        }`}
-                      />
-                    </button>
-                    {isOpen && (
-                      <div className="px-5 pb-5 text-xs sm:text-sm text-muted leading-relaxed border-t border-rule/50 pt-3">
-                        {faq.a}
-                      </div>
-                    )}
+              {FAQS.map((faq, idx) => (
+                <details
+                  key={idx}
+                  name="faq-accordion"
+                  open={idx === 0}
+                  className="atelier-faq bg-card rounded-2xl border border-rule overflow-hidden"
+                >
+                  <summary className="w-full p-5 text-left flex items-center justify-between gap-4 cursor-pointer hover:bg-paper/50 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus">
+                    <span className="text-sm sm:text-base font-serif font-bold text-ink">
+                      {faq.q}
+                    </span>
+                    <ChevronDown className="atelier-faq-chevron w-5 h-5 text-accent shrink-0 transition-transform duration-200" />
+                  </summary>
+                  <div className="px-5 pb-5 text-xs sm:text-sm text-muted leading-relaxed border-t border-rule/50 pt-3">
+                    {faq.a}
                   </div>
-                );
-              })}
+                </details>
+              ))}
             </div>
           </div>
         </div>

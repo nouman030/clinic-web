@@ -22,13 +22,27 @@ export default function TechnologyTour() {
         </div>
 
         {/* Hardware Selector Tabs */}
-        <div className="mt-10 grid grid-cols-2 lg:grid-cols-4 gap-3">
-          {TECH_HARDWARE.map((item) => {
+        <div role="tablist" aria-label="Diagnostic and sterilization hardware" className="mt-10 grid grid-cols-2 lg:grid-cols-4 gap-3">
+          {TECH_HARDWARE.map((item, idx) => {
             const isSelected = activeTech.id === item.id;
             return (
               <button
+                type="button"
+                role="tab"
+                id={`tech-tab-${item.id}`}
+                aria-selected={isSelected}
+                aria-controls="tech-tabpanel"
                 key={item.id}
                 onClick={() => setActiveTech(item)}
+                onKeyDown={(e) => {
+                  if (e.key === 'ArrowRight') {
+                    e.preventDefault();
+                    setActiveTech(TECH_HARDWARE[(idx + 1) % TECH_HARDWARE.length]);
+                  } else if (e.key === 'ArrowLeft') {
+                    e.preventDefault();
+                    setActiveTech(TECH_HARDWARE[(idx - 1 + TECH_HARDWARE.length) % TECH_HARDWARE.length]);
+                  }
+                }}
                 className={`p-4 rounded-2xl text-left border transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus ${
                   isSelected
                     ? 'bg-ink text-white border-ink shadow-md'
@@ -49,7 +63,12 @@ export default function TechnologyTour() {
         </div>
 
         {/* Active Hardware Detail Card */}
-        <div className="mt-8 bg-card rounded-3xl border border-rule p-7 sm:p-10 lg:p-12 shadow-xs grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div
+          id="tech-tabpanel"
+          role="tabpanel"
+          aria-labelledby={`tech-tab-${activeTech.id}`}
+          className="mt-8 bg-card rounded-3xl border border-rule p-7 sm:p-10 lg:p-12 shadow-xs grid grid-cols-1 lg:grid-cols-12 gap-8 items-center"
+        >
           <div className="lg:col-span-7 space-y-6">
             <div className="flex flex-wrap items-center gap-3">
               <span className="px-3 py-1 rounded-full bg-paper border border-rule font-mono text-xs font-bold text-ink">
